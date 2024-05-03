@@ -1,6 +1,7 @@
 import requests
 
-token = "547e9955547e9955547e9955025766beba5547e547e99553250aa59320ed33b91dc33c6"
+# replace TOKEN with access_token from VK API
+token = "TOKEN"
 version = 5.199
 domain = str(input("Enter user id: ")).lower()
 fields = "bdate,education,followers_count,counters"
