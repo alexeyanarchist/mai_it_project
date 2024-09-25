@@ -1,0 +1,28 @@
+{# order.html #}
+{% from "_formhelpers.html" import render_field %}
+<form method=post>
+  <dl>
+    {{ render_field(form.pepperoni) }}
+    {{ render_field(form.spagetti) }}
+    {{ render_field(form.diablo) }}
+    {{ render_field(form.order_time) }}
+  </dl>
+  <p><input type=submit value=Заказать></p>
+</form>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<body>
+  <ul id="order_list">
+  {% for item in navigation %}
+      <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+  {% endfor %}
+  </ul>
+</body>
